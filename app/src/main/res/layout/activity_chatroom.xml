@@ -39,13 +39,19 @@ tools:context=".chatroom">
         android:layout_toStartOf="@+id/button"
         android:layout_weight="1.02" />
 
+
     <Button
-        android:layout_width="52dp"
-        android:layout_height="wrap_content"
         android:id="@+id/button"
-        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Send"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentRight="true"
+        android:background="@drawable/bg_button_round"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="false"/>
+
+
 
 </LinearLayout>
 

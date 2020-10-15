@@ -32,7 +32,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
-    private  Button add_room;
+    private  Button add_room,btnlist;
     private  EditText room_name;
     private ListView listView;
     private String sname;
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btnlist = (Button) findViewById(R.id.buttonlist);
         add_room = (Button)findViewById(R.id.btnAdd_room);
         room_name = (EditText)findViewById(R.id.etNeme_room);
         listView = (ListView)findViewById(R.id.listView);
@@ -63,6 +64,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ListChatRoom.class);
+                startActivity(intent);
+            }
+        });
+
         root.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -71,8 +80,9 @@ public class MainActivity extends AppCompatActivity {
                 while ( i.hasNext())
                 {
                     set.add(((DataSnapshot)i.next()).getKey());
+                    Toast.makeText(MainActivity.this, "tambah room", Toast.LENGTH_LONG).show();
                 }
-                Toast.makeText(MainActivity.this, "pesan masuk", Toast.LENGTH_LONG).show();
+
                 list_of_rooms.clear();
                 list_of_rooms.addAll(set);
 
