@@ -1,38 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".ListChatRoom">
-
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    android:id="@+id/swipe"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+        tools:context=".ListChatRoom">
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/keranjang_recycler"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/AlertDialog.AppCompat.Light"
-            tools:ignore="MissingClass">
+    </androidx.recyclerview.widget.RecyclerView>
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@android:color/transparent" />
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <include layout="@layout/content_main" />
-
-    </LinearLayout>
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-</LinearLayout>
+</RelativeLayout>
